@@ -12,11 +12,8 @@ class CustomeCell: UITableViewCell {
     
     
     @IBOutlet var flagPicture: UIImageView!
-    
     @IBOutlet var nameOfTheCountry: UILabel!
-    
     @IBOutlet var nameOfThePresident: UILabel!
-    
     @IBOutlet var url: UILabel!
     
     override func awakeFromNib() {

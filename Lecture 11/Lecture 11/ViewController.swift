@@ -12,17 +12,17 @@ import UIKit
 //arrayOfCountry.append(ukraine)
 
 class ViewController: UIViewController {
-
+    
     @IBAction func onButtonClick(_ sender: Any) {
         
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -38,8 +38,6 @@ extension ViewController: UITableViewDataSource {
         cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
         cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
         cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
-        
-        cell.nameOfThePresident.isHidden = true
         
         
         return cell
@@ -59,7 +57,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let url = URL(string: arrayOfCountry[indexPath.row].twitterUrl)!
-            UIApplication.shared.open(url)
+        UIApplication.shared.open(url)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
