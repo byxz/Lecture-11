@@ -17,7 +17,7 @@ struct Base {
 
 let ukraine = Base(flag: "ukraine",
                    nameOfTheCountry: "Украина",
-                   nameOfThePresident: "Порошенко",
+                   nameOfThePresident: "Пётр Алексе́евич Пороше́нко",
                    twitterUrl: "https://twitter.com/poroshenko")
 
 let zimbabve = Base(flag: "republicOfZimbabwe",

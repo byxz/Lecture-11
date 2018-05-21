@@ -13,8 +13,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var typeOfCell: Bool = true
+    
+    @IBOutlet var tableView: UITableView!
     @IBAction func onButtonClick(_ sender: Any) {
-        
+        typeOfCell = !typeOfCell
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -34,11 +38,28 @@ extension ViewController: UITableViewDataSource {
         //let cellIdentifier = tableView.c
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomeCell
         
-        cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
-        cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
-        cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
-        cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
-        
+        if typeOfCell {
+            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
+            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
+            cell.nameOfThePresident.text = ""
+            cell.url.text = ""
+            cell.labelNameOfThePresident.isHidden = true
+            cell.labelOfUrl.isHidden = true
+            cell.centrConstraint.isActive = true
+            cell.leftConstraint.isActive = false
+            cell.widthOfFlag.constant = 180
+            
+        } else {
+            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
+            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
+            cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
+            cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
+            cell.labelNameOfThePresident.isHidden = false
+            cell.labelOfUrl.isHidden = false
+            cell.centrConstraint.isActive = false
+            cell.leftConstraint.isActive = true
+            cell.widthOfFlag.constant = 100
+        }
         
         return cell
     }
@@ -52,6 +73,7 @@ extension ViewController: UITableViewDataSource {
         return [delete]
     }
     
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -60,6 +82,10 @@ extension ViewController: UITableViewDelegate {
         UIApplication.shared.open(url)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func reload() {
+        
+    }
+    
     
 }
 
