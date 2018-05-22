@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="140" id="VoB-Dy-Wwq" customClass="CustomeCell" customModule="Lecture_11" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellOne" rowHeight="140" id="VoB-Dy-Wwq" customClass="CustomeCell" customModule="Lecture_11" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VoB-Dy-Wwq" id="lPQ-E0-Gl3">
@@ -48,8 +48,43 @@
                                                         <constraint firstAttribute="height" constant="90" id="C0L-e5-bVO"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameOfTheCountry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSo-J0-Xng">
+                                                    <rect key="frame" x="106.5" y="12" width="162.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="centerX" secondItem="lPQ-E0-Gl3" secondAttribute="centerX" id="8JM-gR-4i6"/>
+                                                <constraint firstItem="eSo-J0-Xng" firstAttribute="top" secondItem="lPQ-E0-Gl3" secondAttribute="topMargin" constant="1" id="MGN-ZL-JQp"/>
+                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="leading" secondItem="lPQ-E0-Gl3" secondAttribute="leading" constant="20" id="SbF-bX-xvl"/>
+                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="top" secondItem="eSo-J0-Xng" secondAttribute="bottom" constant="2" id="ekQ-pN-k2G"/>
+                                                <constraint firstItem="eSo-J0-Xng" firstAttribute="centerX" secondItem="lPQ-E0-Gl3" secondAttribute="centerX" id="foa-3v-goj"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="SbF-bX-xvl"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="centrConstraint" destination="8JM-gR-4i6" id="eYp-pQ-wvQ"/>
+                                            <outlet property="flagPicture" destination="XIu-3J-p8a" id="8I6-Bc-Wrl"/>
+                                            <outlet property="leftConstraint" destination="SbF-bX-xvl" id="wOC-3c-ya1"/>
+                                            <outlet property="nameOfTheCountry" destination="eSo-J0-Xng" id="ZxC-Em-vod"/>
+                                            <outlet property="widthOfFlag" destination="85t-2R-BLr" id="h3C-0Y-w2t"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellTwo" id="OgU-Nt-GbT" customClass="CustomeCell" customModule="Lecture_11" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="375" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OgU-Nt-GbT" id="Hwl-7f-FZV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Bbc-wU-G02">
-                                                    <rect key="frame" x="130" y="51" width="137.5" height="57"/>
+                                                    <rect key="frame" x="167" y="41" width="137.5" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="имя президента:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-4E-Cf7">
                                                             <rect key="frame" x="0.0" y="0.0" width="90.5" height="12"/>
@@ -77,38 +112,26 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameOfTheCountry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSo-J0-Xng">
-                                                    <rect key="frame" x="106.5" y="12" width="162.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vZU-zW-qal">
+                                                    <rect key="frame" x="20" y="24" width="110" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="4Jd-9h-ARf"/>
+                                                        <constraint firstAttribute="width" constant="110" id="KHT-Jh-MHx"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="centerX" secondItem="lPQ-E0-Gl3" secondAttribute="centerX" id="8JM-gR-4i6"/>
-                                                <constraint firstItem="eSo-J0-Xng" firstAttribute="top" secondItem="lPQ-E0-Gl3" secondAttribute="topMargin" constant="1" id="MGN-ZL-JQp"/>
-                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="leading" secondItem="lPQ-E0-Gl3" secondAttribute="leading" constant="20" id="SbF-bX-xvl"/>
-                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="centerY" secondItem="XIu-3J-p8a" secondAttribute="centerY" id="TOs-nm-r6V"/>
-                                                <constraint firstItem="XIu-3J-p8a" firstAttribute="top" secondItem="eSo-J0-Xng" secondAttribute="bottom" constant="2" id="ekQ-pN-k2G"/>
-                                                <constraint firstItem="eSo-J0-Xng" firstAttribute="centerX" secondItem="lPQ-E0-Gl3" secondAttribute="centerX" id="foa-3v-goj"/>
-                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="leading" secondItem="lPQ-E0-Gl3" secondAttribute="leading" constant="130" id="vH4-CI-28Q"/>
+                                                <constraint firstItem="vZU-zW-qal" firstAttribute="leading" secondItem="Hwl-7f-FZV" secondAttribute="leading" constant="20" id="6wy-vV-b7X"/>
+                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="leading" secondItem="vZU-zW-qal" secondAttribute="trailing" constant="37" id="QdX-vE-9Hp"/>
+                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="centerY" secondItem="Hwl-7f-FZV" secondAttribute="centerY" id="hXX-fq-WRh"/>
+                                                <constraint firstItem="vZU-zW-qal" firstAttribute="centerY" secondItem="Hwl-7f-FZV" secondAttribute="centerY" id="vCY-WW-S2o"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="SbF-bX-xvl"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="centrConstraint" destination="8JM-gR-4i6" id="eYp-pQ-wvQ"/>
-                                            <outlet property="flagPicture" destination="XIu-3J-p8a" id="8I6-Bc-Wrl"/>
-                                            <outlet property="labelNameOfThePresident" destination="tpW-4E-Cf7" id="EZc-dT-cmk"/>
-                                            <outlet property="labelOfUrl" destination="xfu-cM-cRE" id="0c2-Xe-w6L"/>
-                                            <outlet property="leftConstraint" destination="SbF-bX-xvl" id="wOC-3c-ya1"/>
-                                            <outlet property="nameOfTheCountry" destination="eSo-J0-Xng" id="ZxC-Em-vod"/>
-                                            <outlet property="nameOfThePresident" destination="ssO-e7-3hV" id="rna-A2-r5T"/>
-                                            <outlet property="url" destination="lMT-GA-2C9" id="ELD-65-s1K"/>
-                                            <outlet property="widthOfFlag" destination="85t-2R-BLr" id="h3C-0Y-w2t"/>
+                                            <outlet property="labelNameOfThePresident" destination="tpW-4E-Cf7" id="aHg-O1-Eep"/>
+                                            <outlet property="labelOfUrl" destination="xfu-cM-cRE" id="2Zs-1m-LCL"/>
+                                            <outlet property="nameOfThePresident" destination="ssO-e7-3hV" id="6iV-6M-qtT"/>
+                                            <outlet property="url" destination="lMT-GA-2C9" id="ooe-Ex-TeQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

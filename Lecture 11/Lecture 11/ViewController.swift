@@ -35,32 +35,13 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cellIdentifier = tableView.c
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomeCell
+        let cellIdentifier = typeOfCell == true ? "CellOne" : "CellTwo"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomeCell
         
-        if typeOfCell {
-            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
-            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
-            cell.nameOfThePresident.text = ""
-            cell.url.text = ""
-            cell.labelNameOfThePresident.isHidden = true
-            cell.labelOfUrl.isHidden = true
-            cell.centrConstraint.isActive = true
-            cell.leftConstraint.isActive = false
-            cell.widthOfFlag.constant = 180
-            
-        } else {
-            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
-            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
-            cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
-            cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
-            cell.labelNameOfThePresident.isHidden = false
-            cell.labelOfUrl.isHidden = false
-            cell.centrConstraint.isActive = false
-            cell.leftConstraint.isActive = true
-            cell.widthOfFlag.constant = 100
-        }
-        
+        cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
+        cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
+        cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
+        cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
         return cell
     }
     
