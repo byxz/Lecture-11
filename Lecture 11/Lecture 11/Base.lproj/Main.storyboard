@@ -84,7 +84,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Bbc-wU-G02">
-                                                    <rect key="frame" x="167" y="41" width="137.5" height="57"/>
+                                                    <rect key="frame" x="140" y="41.5" width="137.5" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="имя президента:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-4E-Cf7">
                                                             <rect key="frame" x="0.0" y="0.0" width="90.5" height="12"/>
@@ -119,17 +119,27 @@
                                                         <constraint firstAttribute="width" constant="110" id="KHT-Jh-MHx"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameOfTheCountry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGB-QG-l2U">
+                                                    <rect key="frame" x="106.5" y="1" width="162.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vZU-zW-qal" firstAttribute="leading" secondItem="Hwl-7f-FZV" secondAttribute="leading" constant="20" id="6wy-vV-b7X"/>
-                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="leading" secondItem="vZU-zW-qal" secondAttribute="trailing" constant="37" id="QdX-vE-9Hp"/>
+                                                <constraint firstItem="aGB-QG-l2U" firstAttribute="centerX" secondItem="Hwl-7f-FZV" secondAttribute="centerX" id="LSl-o1-Izh"/>
+                                                <constraint firstItem="Bbc-wU-G02" firstAttribute="leading" secondItem="vZU-zW-qal" secondAttribute="trailing" constant="10" id="QdX-vE-9Hp"/>
                                                 <constraint firstItem="Bbc-wU-G02" firstAttribute="centerY" secondItem="Hwl-7f-FZV" secondAttribute="centerY" id="hXX-fq-WRh"/>
+                                                <constraint firstItem="aGB-QG-l2U" firstAttribute="top" secondItem="Hwl-7f-FZV" secondAttribute="top" constant="1" id="tVS-sM-1do"/>
                                                 <constraint firstItem="vZU-zW-qal" firstAttribute="centerY" secondItem="Hwl-7f-FZV" secondAttribute="centerY" id="vCY-WW-S2o"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="flagPicture" destination="vZU-zW-qal" id="hSA-Nv-W9p"/>
                                             <outlet property="labelNameOfThePresident" destination="tpW-4E-Cf7" id="aHg-O1-Eep"/>
                                             <outlet property="labelOfUrl" destination="xfu-cM-cRE" id="2Zs-1m-LCL"/>
+                                            <outlet property="nameOfTheCountry" destination="aGB-QG-l2U" id="hzo-p4-NjA"/>
                                             <outlet property="nameOfThePresident" destination="ssO-e7-3hV" id="6iV-6M-qtT"/>
                                             <outlet property="url" destination="lMT-GA-2C9" id="ooe-Ex-TeQ"/>
                                         </connections>

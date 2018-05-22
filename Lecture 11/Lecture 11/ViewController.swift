@@ -25,8 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -34,14 +32,25 @@ extension ViewController: UITableViewDataSource {
         return arrayOfCountry.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = typeOfCell == true ? "CellOne" : "CellTwo"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomeCell
         
-        cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
-        cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
-        cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
-        cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
+        switch cellIdentifier {
+        case "CellOne":
+            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
+            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
+        case "CellTwo":
+            cell.flagPicture.image = UIImage(named: arrayOfCountry[indexPath.row].flag)
+            cell.nameOfTheCountry.text = arrayOfCountry[indexPath.row].nameOfTheCountry
+            cell.nameOfThePresident.text = arrayOfCountry[indexPath.row].nameOfThePresident
+            cell.url.text = arrayOfCountry[indexPath.row].twitterUrl
+        default:
+            print("Error")
+        }
+        
         return cell
     }
     
@@ -53,8 +62,6 @@ extension ViewController: UITableViewDataSource {
         delete.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return [delete]
     }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -66,8 +73,6 @@ extension ViewController: UITableViewDelegate {
     func reload() {
         
     }
-    
-    
 }
 
 
